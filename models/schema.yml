@@ -17,3 +17,18 @@ sources:
       - name: ship
         description: information regarding our shipping costs
         identifier: raw_gz_ship
+      - name: adwords
+        description: Info regarding the ad campaigns
+        identifier: raw_gz_adwords
+
+      - name: bing
+        description: Info regarding the campaign done on Bing
+        identifier: raw_gz_bing
+      
+      - name: criteo
+        description: Info regarding the campaign done on Bing
+        identifier: raw_gz_criteo
+
+      - name: facebook
+        description: Info regarding the campaign done on Bing
+        identifier: raw_gz_facebook
