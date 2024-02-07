@@ -17,3 +17,47 @@ sources:
       - name: ship
         description: information regarding our shipping costs
         identifier: raw_gz_ship
+      
+      - name: adwords
+        description: Info regarding the ad campaigns
+        identifier: raw_gz_adwords
+        tests:
+           - unique:
+              column_name: "(campaign_key || '-' || date_date)"
+
+      - name: bing
+        description: Info regarding the campaign done on Bing
+        identifier: raw_gz_bing
+        tests:
+           - unique:
+              column_name: "(campaign_key || '-' || date_date)"
+
+      
+      - name: criteo
+        description: Info regarding the campaign done on Bing
+        identifier: raw_gz_criteo
+        tests:
+           - unique:
+              column_name: "(campaign_key || '-' || date_date)"
+
+      - name: facebook
+        description: Info regarding the campaign done on Bing
+        identifier: raw_gz_facebook
+        tests:
+           - unique:
+               column_name: "(campaign_key || '-' || date_date)"
+models:
+  - name: int_campaign.sql
+    description: Intermediate table for campaign
+    tests:
+     - unique:
+        column name: "(campaign_key || '-' || date_date)"
+     - not_null:
+        column name: campaign_key
+  - name: int_campaigns_day.sql
+    description: aggregated version of all campaigns
+  - name: finance_campaigns_day.sql
+    description: aggregation of ads cost
+
+
+          
